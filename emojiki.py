@@ -9,8 +9,8 @@ async def change_name():
     client = TelegramClient('emojiki', API_ID, API_HASH, loop=loop)
     async with client:
         emoji = random.choice(list_emoji)
-        first = emoji + "Артём"
-        last = "Андреевич" + emoji
+        first = emoji + FIRST_NAME
+        last = LAST_NAME + emoji
         await client(UpdateProfileRequest(first, last))
 
 if __name__ == "__main__":
